@@ -9,6 +9,8 @@ import retrofit2.http.Url
  * para consumirlo
  */
 interface APIService {
+    // Todas las funcionas asíncronas deben tener el suspend
+    // para que funcione en la carrutina
     @GET
-    fun getDogsByBreeds(@Url url: String): Response<DogsResponse>
+    suspend fun getDogsByBreeds(@Url url: String): Response<DogsResponse>
 }
